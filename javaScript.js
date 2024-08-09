@@ -43,3 +43,55 @@ function example() {
     console.log(functionScoped); //works fine
     console.log(blockScoped) // ERROR: blockscoped is not defined
 }
+
+// 2. Object-Oriented Programming in JavaScript
+/*
+Objects:
+    - Objects in JavaScript are collections of key-value pairs.
+    - They can represent more complex structures and allow the grouping of related data and functionality
+*/
+// Example:
+let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        return 'Hello, my name is ${this.name}';
+    }
+};
+
+console.log(persont.greet()); // "Hello, my name is John"
+/*
+Prototypes:
+    - JavaScript uses prototypal inheritance.
+    - Every object in JavaScript has a prototype, which is another object from which it inherits properties and methods.
+*/
+// Example:
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.greet = function() {
+    return 'Hello, my name is ${this.name}';
+};
+
+let john = new Person("John", 30);
+console.log(john.greet()); // "Hello, my name is John"
+/*
+Classes:
+    - Introduced in ES6, classes provide a more straightforward syntax for creating objects and handling inheritance.
+    - Although they are essentially syntactic sugar over prototypes
+*/
+// Example:
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        return 'Hello, my name is ${this.name}';
+    }
+};
+
+let frank = new Person("Frank", 30);
+console.log(frank.greet()); // "Hello, my name is Frank"
