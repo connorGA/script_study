@@ -95,3 +95,55 @@ class Person {
 
 let frank = new Person("Frank", 30);
 console.log(frank.greet()); // "Hello, my name is Frank"
+
+// 3. Asynchronous JavaScript:
+/*
+Callbacks:
+    - A function passed as an argument to another function, which is executed after some operation has been completed
+*/
+// Example:
+function fetchData(callback) {
+    setTimeout(() => {
+        callback("Data Fetched");
+    }, 1000);
+}
+
+fetchData((message) => {
+    console.log(message); // "Data Fetched"
+});
+/*
+Promises:
+    - Promises represent a value that may be available now, in the future, or never.
+    - Promises can be in one of three states: pending, fulfilled, rejected
+*/
+// Example:
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data Fetched");
+        }, 1000);
+    });
+}
+
+fetchData().then((message) => {
+    console.log(message); // "Data Fetched"
+}).catch((error) => {
+    console.error(error);
+});
+
+/*
+Async/Await:
+    - Async/await is a syntactic sugar built on top of promises
+    - It allows writing asychronous code in a sychronous-looking manner
+*/
+// Example: 
+async function fetchData() {
+    let message = await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Data Fetched");
+        }, 1000);
+    });
+    console.log(message); // "Data Fetched"
+}
+
+fetchData();
