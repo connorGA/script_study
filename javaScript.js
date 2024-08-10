@@ -199,3 +199,11 @@ console.log("End")
 // Start
 // End
 // Timeout
+/*
+5. Best Practices
+    - Use 'const' and 'let' instead of 'var'. const for constants and let for variables that will change
+    - Avoid global variables: Encapsulate your code to prevent pollution of global namespace
+    - Use strict equality ('==='): This avoid unexpected type corrections that occurs with '=='
+    - Handle errors properly: Use 'try/catch' for sychronous code and .catch for promises
+    - Keep functions pure: Avoid side effects in functions, which makes them easier to test and maintain
+*/
