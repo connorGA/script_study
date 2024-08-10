@@ -110,3 +110,29 @@ function identity<T>(value: T): T {
 
 let output1 = identity<string>("Hello"); // "Hello"
 let output2 = identity<number>(42); //42
+
+//4. Modules and Namespaces:
+/*
+Modules:
+    - TypeScript follows ES6 module syntax, allowing you to export and import code across files
+*/
+// Example:
+//math.ts
+export function add(x: number, y: number): number {
+    return x + y;
+}
+//app.ts
+// import { add } from './math';    commented out because no math.ts file to import from so was throwing an error
+console.log(add(10,20)); //30 
+/*
+Namespaces:
+    - Namespaces in TypeScript are a way to organize code into logical groups and prevent name collisions
+*/
+// Example:
+namespace Utils {
+    export function log(message: string): void {
+        console.log(message);
+    }
+}
+
+Utils.log("Hello World") // "Hello World"
