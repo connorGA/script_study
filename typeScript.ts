@@ -45,3 +45,68 @@ Any Type:
 let randomValue: any = "Hello";
 randomValue = 10; //valid
 randomValue = true; //valid
+
+// 3. Advanced Types:
+/*
+Interfaces:
+    - Interfaces define the shape of an object, specifying the properties and their types that the object must have
+*/ 
+// Example:
+interface User {
+    name: string;
+    age: number;
+    isAdmin?: boolean; // optional property
+}
+
+function printUser(user: User) {
+    console.log(`${user.name} is ${user.age} years old`);
+}
+
+const user: User = {name: "John", age: 30};
+printUser(user); //"John is 30 years old"
+/*
+Classes and Interfaces:
+    - TypeScript allows you to use interfaces to enforce contracts wihin classes
+*/
+// Example 
+interface Shape {
+    area(): number;
+}
+
+class Circle implements Shape {
+    radius: number;
+
+    constructor(radius: number) {
+        this.radius = radius;
+    }
+
+    area(): number {
+        return Math.PI * this.radius ** 2;
+    }
+}
+
+let circle = new Circle(5);
+console.log(circle.area()); //78.5398...
+/*
+Enums:
+    -Enums allow you to define a set of named constants, which can be either numeric or string values
+*/
+// Example:
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+let color: Color = Color.Green;
+console.log(color); // 1
+/*
+Generics:
+    - Generics allow you to create reusable components that can work with any data type while maintaining type safety
+*/
+// Example:
+function identity<T>(value: T): T {
+    return value;
+}
+
+let output1 = identity<string>("Hello"); // "Hello"
+let output2 = identity<number>(42); //42
