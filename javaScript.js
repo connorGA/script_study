@@ -147,3 +147,55 @@ async function fetchData() {
 }
 
 fetchData();
+
+// 4. Advanced Topics
+/*
+Closures:
+    - A closure is a function that remembers its lexical scope even when the function is executed outside that scope
+        - Characteristics of Lexical Scope:
+            -Global Scope: When a variable is defined outside of any functions or blocks, it has a global scope and can be accessed from anywhere in the program
+            -Local Scope: When a variable is defined within a function or block
+            -Scope Chain: When a function is invoked, the computer must sequentially go through the scope chain to look for a variable         
+*/
+// Example:
+function outer() {
+    let outerVariable = "I'm outer";
+
+    function inner() {
+        console.log(outerVariable); // Can access outerVariable
+    }
+
+    return inner;
+}
+
+let innerFunc = outer()
+innerFunc(); // "I'm outer"
+/* 
+Modules: 
+    - ES6 introduced modules, which allow developers to split code into reusable pieces
+*/
+// Example:
+//module.js
+export function greet(name){
+    return 'Hello, ${name}';
+}
+
+//main.ja
+import {greet} from './module.js';
+console.log(greet("John")); // "Hello, John"
+/*
+Event Loop:
+    - JavaScripts concurrency model is based on the "event loop", which is responsible for executing code, collecting and processing events, and executing queued sub-tasks
+*/
+// Example:
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+console.log("End")
+// Output:
+// Start
+// End
+// Timeout
