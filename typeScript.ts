@@ -163,3 +163,42 @@ Angular with TypeScript:
 Vue with TypeScript:
     - Vue.js supports TypeScript, and there are tools and libraries like Vue CLI and Vuex that have TypeScript support out of the box
 */
+
+// 6. Error Handling and Best Practices
+/*
+Strict Mode:
+    - TypeScript can be configured to operate in strict mode, enforcing more rigorous checks on your codebase
+*/
+// Example: 
+// tsconfig.json
+// {
+//     "compilerOptions": {
+//         "strict": true
+//     }
+// }
+/*
+Type Guards:
+    - Type guards are functions or expressions that check the type of a variable at runtime, allowing you to write safer code
+*/
+// Example:
+function isNumber(value: any): value is number {
+    return typeof value === "number";
+}
+
+function processValue(value: number | string) {
+    if (isNumber(value)) {
+        // Here, TypeScript knows 'value' is a number
+        console.log(value * 2);
+    } else {
+        console.log(value.toUpperCase());
+    }
+}
+
+/*
+Best Practices:
+    - Use Interfaces and Types: Define explicit shapes for your objects and functions
+    - Avoid the 'any' Type: Use 'any' sparingly, as it bypasses TypeScript's type safety
+    - Utilize 'readonly' and 'const': Use 'readonly' in interfaces and 'const' in variables to enforce immutability
+    - Leverage Generics: Create flexible, reusable functions and components with generics
+    - Configure 'tsconfig.json' Properly: Ensure your TypeScript project is configured with the appropriate options for your use case
+*/
