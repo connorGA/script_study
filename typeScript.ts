@@ -136,3 +136,30 @@ namespace Utils {
 }
 
 Utils.log("Hello World") // "Hello World"
+
+// 5. TypeScript with JavaScript Frameworks
+/*
+React with TypeScript
+    - TypeScript is commonly used with React to provide better type safety for components and props
+*/
+// Example:
+// import React from 'react';
+
+// interface Props {
+//     name: string;
+//     age: number;
+// }
+
+// const Greeting: React.FC<Props> = ({ name, age }) => {
+//     return <h1>Hello, {name}. You are {age} years old.</h1>
+// }
+
+// export default Greeting;
+
+/*
+Angular with TypeScript:
+    - Angular is built with TypeScript, and its strong typing system is one of its core features
+    - TypeScript enhances Angular's capabilities with better tooling, type checking, and code navigation
+Vue with TypeScript:
+    - Vue.js supports TypeScript, and there are tools and libraries like Vue CLI and Vuex that have TypeScript support out of the box
+*/
